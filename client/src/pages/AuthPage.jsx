@@ -1,4 +1,6 @@
+import CommonForm from "@/components/common-form/CommonForm"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { signInFormControls, signUpFormControls } from "@/config.js"
 import { GraduationCap } from "lucide-react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
@@ -30,8 +32,16 @@ const AuthPage = () => {
                         <TabsTrigger value='signin'> Sign In</TabsTrigger>
                         <TabsTrigger value='signup'>Sign Up</TabsTrigger>
                     </TabsList>
-                    <TabsContent value='signin'>signin</TabsContent>
-                    <TabsContent value='signup'>signup</TabsContent>
+                    <TabsContent value='signin'>
+                        <CommonForm
+                            formControls={signInFormControls}
+                        />
+                    </TabsContent>
+                    <TabsContent value='signup'>
+                        <CommonForm
+                            formControls={signUpFormControls}
+                        />
+                    </TabsContent>
                 </Tabs>
             </div>
         </div >
